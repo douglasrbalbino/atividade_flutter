@@ -40,6 +40,26 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                 ),
+                
+                SizedBox(
+                  width: 320,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Email',
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                SizedBox(
+                  width: 320,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Password',
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
