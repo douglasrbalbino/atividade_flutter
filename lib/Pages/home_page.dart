@@ -1,5 +1,6 @@
 // This widget is the root of your application.
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/Pages/profile.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -40,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         text: 'Aquila',
                         style: TextStyle(color: Colors.black),
                       ),
+                      
                     ],
                   ),
                 ),
@@ -118,6 +120,13 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         onPressed: () {
                           print(emailController.text);
+
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MyProfile(title: ''),
+                            ),
+                          );
                         },
                         child: Text(
                           "LOGIN",
