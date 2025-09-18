@@ -11,6 +11,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,12 +43,35 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                 ),
-                
+
+                const SizedBox(height: 50),
+
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+
+                  children: [
+                    Center(
+                      child: Text(
+                        'Welcome!',
+                        style: TextStyle(
+                          fontSize: 35,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 50),
+
                 SizedBox(
                   width: 320,
                   child: TextField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
                       labelText: 'Email',
                     ),
                   ),
@@ -55,9 +81,50 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 320,
                   child: TextField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
                       labelText: 'Password',
                     ),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 40.0, top: 10.0),
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 50),
+
+                SizedBox(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange,
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 100,
+                            vertical: 15,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40.0),
+                          ),
+                        ),
+                        onPressed: () {
+                          print(emailController.text);
+                        },
+                        child: Text(
+                          "LOGIN",
+                          style: TextStyle(fontSize: 20, color: Colors.white),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
