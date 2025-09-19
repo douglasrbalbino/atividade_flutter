@@ -67,16 +67,29 @@ class _ProjetosPageState extends State<ProjetosPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            backgroundColor: WidgetStatePropertyAll(
-                              Colors.orange,
+                        SizedBox(
+                          width: 100,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ButtonStyle(
+                              shape: WidgetStatePropertyAll(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadiusGeometry.circular(
+                                    8,
+                                  ),
+                                ),
+                              ),
+                              backgroundColor: WidgetStatePropertyAll(
+                                Colors.orange,
+                              ),
                             ),
-                          ),
-                          child: Text(
-                            "Acessar",
-                            style: TextStyle(color: Colors.white),
+                            child: Text(
+                              "Acessar",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -85,6 +98,158 @@ class _ProjetosPageState extends State<ProjetosPage> {
                 ),
               ),
             ),
+
+            SizedBox(height: 12),
+
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 20,
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.folder_copy,
+                            size: 30,
+                            color: Colors.orange,
+                          ),
+                          SizedBox(width: 16),
+                          Text(
+                            "API deChatBot",
+                            style: AppTextStyle.titleAppBar.copyWith(
+                              fontSize: 25,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 45,
+                        right: 30,
+                        top: 10,
+                      ),
+                      child: Text(
+                        "Aplicativo para gerenciamento de notas dos alunos do Senac.",
+                        style: AppTextStyle.subtitlePage.copyWith(fontSize: 16),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        SizedBox(
+                          width: 100,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ButtonStyle(
+                              shape: WidgetStatePropertyAll(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadiusGeometry.circular(
+                                    8,
+                                  ),
+                                ),
+                              ),
+                              backgroundColor: WidgetStatePropertyAll(
+                                Colors.orange,
+                              ),
+                            ),
+                            child: Text(
+                              "Acessar",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            SizedBox(height: 12),
+
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 20,
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.folder_copy,
+                            size: 30,
+                            color: Colors.orange,
+                          ),
+                          SizedBox(width: 16),
+                          Text(
+                            "App de Calculadora",
+                            style: AppTextStyle.titleAppBar.copyWith(
+                              fontSize: 25,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 45,
+                        right: 30,
+                        top: 10,
+                      ),
+                      child: Text(
+                        "Aplicativo para gerenciamento de notas dos alunos do Senac.",
+                        style: AppTextStyle.subtitlePage.copyWith(fontSize: 16),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        SizedBox(
+                          width: 100,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ButtonStyle(
+                              shape: WidgetStatePropertyAll(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadiusGeometry.circular(
+                                    8,
+                                  ),
+                                ),
+                              ),
+                              backgroundColor: WidgetStatePropertyAll(
+                                Colors.orange,
+                              ),
+                            ),
+                            child: Text(
+                              "Acessar",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            SizedBox(height: 12),
           ],
         ),
       ),
