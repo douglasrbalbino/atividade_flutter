@@ -13,7 +13,7 @@ class MyProfile extends StatefulWidget {
 }
 
 class _MyProfileState extends State<MyProfile> {
-  int _selectedIndex = 1; // 1. O índice da página de Projetos é 1
+  int _selectedIndex = 2; // 1. O índice da página de Projetos é 1
 
   // 2. Método para lidar com o toque nos itens da barra de navegação
   void _onItemTapped(int index) {
