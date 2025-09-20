@@ -120,7 +120,7 @@ class _ProjetosPageState extends State<ProjetosPage> {
                           ),
                           SizedBox(width: 16),
                           Text(
-                            "API deChatBot",
+                            "API de ChatBot",
                             style: AppTextStyle.titleAppBar.copyWith(
                               fontSize: 25,
                             ),
@@ -252,6 +252,18 @@ class _ProjetosPageState extends State<ProjetosPage> {
             SizedBox(height: 12),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.folder), label: 'Projetos'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
+        ],
+        currentIndex:
+            _ProjetosPageState, // 5. 'currentIndex' recebe o valor da nossa variável de estado
+        onTap:
+            'Projetos', // 6. 'onTap' chama nosso método para atualizar o estado
+        // 6. 'onTap' chama nosso método para atualizar o estado
       ),
     );
   }

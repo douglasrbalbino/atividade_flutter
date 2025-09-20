@@ -41,7 +41,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         text: 'Aquila',
                         style: TextStyle(color: Colors.black),
                       ),
-                      
                     ],
                   ),
                 ),
