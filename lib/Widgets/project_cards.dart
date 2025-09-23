@@ -48,7 +48,7 @@ class ProjectCards extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 SizedBox(
-                  width: 110,
+                  // width: 110,
                   child: ElevatedButton(
                     onPressed: funcao,
                     style: ButtonStyle(
