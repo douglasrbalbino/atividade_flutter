@@ -1,5 +1,6 @@
 // This widget is the root of your application.
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/Pages/custom_page_router.dart';
 import 'package:flutter_application_2/Pages/profile.dart';
 import 'package:flutter_application_2/Pages/projetos_page.dart';
 
@@ -39,14 +40,14 @@ class _MyHomePageState extends State<MyHomePage> {
       case 1:
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const ProjetosPage()),
+          SlideLeftRoute(page: const ProjetosPage()),
         ); // Já estamos na página de Projetos, então não fazemos nada
         break;
 
       case 2:
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const MyProfile(title: '')),
+          SlideLeftRoute(page: const MyProfile(title: '')),
         );
         break;
     }

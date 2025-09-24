@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Config/app_colors.dart';
 import 'package:flutter_application_2/Config/app_text_style.dart';
 import 'package:flutter_application_2/Controllers/projects_controller.dart';
+import 'package:flutter_application_2/Pages/custom_page_router.dart';
 import 'package:flutter_application_2/Pages/home_page.dart';
 import 'package:flutter_application_2/Pages/profile.dart';
+import 'package:flutter_application_2/Pages/right_page_router.dart';
 import 'package:flutter_application_2/Widgets/project_cards.dart';
 
 class ProjetosPage extends StatefulWidget {
@@ -28,10 +30,7 @@ class _ProjetosPageState extends State<ProjetosPage> {
       case 0:
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(
-            builder: (context) =>
-                const MyHomePage(title: 'Flutter Demo Home Page'),
-          ),
+          SlideRightRoute(page: const MyHomePage(title: ' ')),
         );
         break;
 
@@ -45,7 +44,7 @@ class _ProjetosPageState extends State<ProjetosPage> {
       case 2:
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const MyProfile(title: '')),
+          SlideLeftRoute(page: const MyProfile(title: '')),
         );
         break;
     }
@@ -80,6 +79,7 @@ class _ProjetosPageState extends State<ProjetosPage> {
           ),
         ),
       ),
+
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),

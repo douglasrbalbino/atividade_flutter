@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/home_page.dart';
 import 'package:flutter_application_2/Pages/projetos_page.dart';
+import 'package:flutter_application_2/Pages/right_page_router.dart';
 
 class MyProfile extends StatefulWidget {
   const MyProfile({super.key, required this.title});
@@ -26,9 +27,8 @@ class _MyProfileState extends State<MyProfile> {
       case 0:
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(
-            builder: (context) =>
-                const MyHomePage(title: 'Flutter Demo Home Page'),
+          SlideRightRoute(
+            page: const MyHomePage(title: 'Flutter Demo Home Page'),
           ),
         );
         break;
@@ -36,7 +36,7 @@ class _MyProfileState extends State<MyProfile> {
       case 1:
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const ProjetosPage()),
+          SlideRightRoute(page: const ProjetosPage()),
         ); // Já estamos na página de Projetos, então não fazemos nada
         break;
 
