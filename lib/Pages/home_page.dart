@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/custom_page_router.dart';
 import 'package:flutter_application_2/Pages/profile.dart';
 import 'package:flutter_application_2/Pages/projetos_page.dart';
+import 'package:flutter_application_2/Pages/right_page_router.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -27,16 +28,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // 3. Lógica de navegação
     switch (index) {
-      case 0:
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) =>
-                const MyHomePage(title: 'Flutter Demo Home Page'),
-          ),
-        );
-        break;
-
       case 1:
         Navigator.pushReplacement(
           context,
@@ -158,11 +149,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         onPressed: () {
                           print(emailController.text);
 
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) => MyProfile(title: ''),
-                            ),
+                            SlideLeftRoute(page: ProjetosPage()),
                           );
                         },
                         child: Text(

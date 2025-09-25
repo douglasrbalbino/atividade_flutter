@@ -34,15 +34,8 @@ class _ProjetosPageState extends State<ProjetosPage> {
         );
         break;
 
-      case 1:
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const ProjetosPage()),
-        ); // Já estamos na página de Projetos, então não fazemos nada
-        break;
-
       case 2:
-        Navigator.pushReplacement(
+        Navigator.push(
           context,
           SlideLeftRoute(page: const MyProfile(title: '')),
         );

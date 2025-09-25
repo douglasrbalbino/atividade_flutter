@@ -34,17 +34,10 @@ class _MyProfileState extends State<MyProfile> {
         break;
 
       case 1:
-        Navigator.pushReplacement(
+        Navigator.push(
           context,
           SlideRightRoute(page: const ProjetosPage()),
         ); // Já estamos na página de Projetos, então não fazemos nada
-        break;
-
-      case 2:
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const MyProfile(title: '')),
-        );
         break;
     }
   }
