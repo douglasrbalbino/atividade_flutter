@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/custom_page_router.dart';
 import 'package:flutter_application_2/Pages/profile.dart';
 import 'package:flutter_application_2/Pages/projetos_page.dart';
-import 'package:flutter_application_2/Pages/right_page_router.dart';
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});

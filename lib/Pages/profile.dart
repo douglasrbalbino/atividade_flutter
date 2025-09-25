@@ -46,6 +46,14 @@ class _MyProfileState extends State<MyProfile> {
       backgroundColor: Color(0xFFFFFFFF),
       body: Column(
         children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [Icon(Icons.logout, size: 35), Text("Sair")],
+            ),
+          ),
+
           Container(
             color: Colors.white,
             child: Center(
