@@ -1,11 +1,12 @@
- // This widget is the root of your application.
-  import 'package:flutter/material.dart';
-
+// This widget is the root of your application.
+import 'package:flutter/material.dart';
+import 'package:flutter_application_2/Pages/custom_page_router.dart';
+import 'package:flutter_application_2/Pages/profile.dart';
+import 'package:flutter_application_2/Pages/projetos_page.dart';
 
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
 
   final String title;
 
@@ -14,43 +15,168 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
-  void _incrementCounter() {
+  int _selectedIndex = 0; // 1. O índice da página de Projetos é 1
+
+  // 2. Método para lidar com o toque nos itens da barra de navegação
+  void _onItemTapped(int index) {
     setState(() {
-
-      _counter++;
+      _selectedIndex = index;
     });
+
+    // 3. Lógica de navegação
+    switch (index) {
+      case 1:
+        Navigator.pushReplacement(
+          context,
+          SlideLeftRoute(page: const ProjetosPage()),
+        ); // Já estamos na página de Projetos, então não fazemos nada
+        break;
+
+      case 2:
+        Navigator.pushReplacement(
+          context,
+          SlideLeftRoute(page: const MyProfile(title: '')),
+        );
+        break;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBar(
+      body: SafeArea(
+        child: Container(
+          color: Colors.white,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.flutter_dash, size: 100, color: Colors.orange),
+                RichText(
+                  text: TextSpan(
+                    // Estilo base para todo o texto, que será herdado
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                    children: <TextSpan>[
+                      // O primeiro TextSpan para a palavra "Diego" com a cor laranja
+                      TextSpan(
+                        text: 'Diego ',
+                        style: TextStyle(color: Colors.orange),
+                      ),
+                      // O segundo TextSpan para a palavra "Aquila" com a cor azul
+                      TextSpan(
+                        text: 'Aquila',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
 
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+                const SizedBox(height: 50),
 
-        title: Text(widget.title),
-      ),
-      body: Center(
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
 
-        child: Column(
+                  children: [
+                    Center(
+                      child: Text(
+                        'Welcome!',
+                        style: TextStyle(
+                          fontSize: 35,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
 
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+                const SizedBox(height: 50),
+
+                SizedBox(
+                  width: 320,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      labelText: 'Email',
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                SizedBox(
+                  width: 320,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      labelText: 'Password',
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 40.0, top: 10.0),
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 50),
+
+                SizedBox(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange,
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 100,
+                            vertical: 15,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40.0),
+                          ),
+                        ),
+                        onPressed: () {
+                          print(emailController.text);
+
+                          Navigator.pushReplacement(
+                            context,
+                            SlideLeftRoute(page: ProjetosPage()),
+                          );
+                        },
+                        child: Text(
+                          "LOGIN",
+                          style: TextStyle(fontSize: 20, color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Login'),
+          BottomNavigationBarItem(icon: Icon(Icons.folder), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
+        ],
+        currentIndex:
+            _selectedIndex, // 4. 'currentIndex' recebe o valor da nossa variável de estado
+        onTap: _onItemTapped,
       ),
     );
   }
