@@ -47,10 +47,25 @@ class _MyProfileState extends State<MyProfile> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [Icon(Icons.logout, size: 35), Text("Sair")],
+              children: [
+                IconButton(
+                  icon: Icon(Icons.logout, size: 30, color: Colors.orange),
+                  tooltip: 'Sair', // Opcional: melhora a acessibilidade
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MyHomePage(title: ''),
+                      ),
+                      (Route<dynamic> route) => false,
+                    );
+                  },
+                ),
+                Text("Sair"),
+              ],
             ),
           ),
 
