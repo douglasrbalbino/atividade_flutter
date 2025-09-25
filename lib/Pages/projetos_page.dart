@@ -34,15 +34,8 @@ class _ProjetosPageState extends State<ProjetosPage> {
         );
         break;
 
-      case 1:
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const ProjetosPage()),
-        ); // Já estamos na página de Projetos, então não fazemos nada
-        break;
-
       case 2:
-        Navigator.pushReplacement(
+        Navigator.push(
           context,
           SlideLeftRoute(page: const MyProfile(title: '')),
         );
@@ -82,15 +75,13 @@ class _ProjetosPageState extends State<ProjetosPage> {
 
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.folder), label: 'Projetos'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Login'),
+          BottomNavigationBarItem(icon: Icon(Icons.folder), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
         ],
         currentIndex:
             _selectedIndex, // 4. 'currentIndex' recebe o valor da nossa variável de estado
-        onTap:
-            _onItemTapped, // 6. 'onTap' chama nosso método para atualizar o estado
-        // 6. 'onTap' chama nosso método para atualizar o estado
+        onTap: _onItemTapped,
       ),
     );
   }

@@ -27,16 +27,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // 3. Lógica de navegação
     switch (index) {
-      case 0:
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) =>
-                const MyHomePage(title: 'Flutter Demo Home Page'),
-          ),
-        );
-        break;
-
       case 1:
         Navigator.pushReplacement(
           context,
@@ -158,11 +148,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         onPressed: () {
                           print(emailController.text);
 
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) => MyProfile(title: ''),
-                            ),
+                            SlideLeftRoute(page: ProjetosPage()),
                           );
                         },
                         child: Text(
@@ -181,8 +169,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.folder), label: 'Projetos'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Login'),
+          BottomNavigationBarItem(icon: Icon(Icons.folder), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
         ],
         currentIndex:
